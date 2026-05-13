@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Gerencie suas tarefas com prioridade e organize seu dia de forma simples e eficiente.">
+  <title>Gestão de Tarefas – ES6</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="src/css/style.css">
+</head>
+
+<body>
+  <main class="container">
+    <h1>Gestão de Tarefas</h1>
+
+    <!-- Formulário -->
+    <form id="taskForm" class="form" novalidate>
+      <div class="form-row">
+        <label for="titulo" class="sr-only">Título da tarefa</label>
+        <input type="text" id="titulo" name="titulo" placeholder="Título da tarefa" required autocomplete="off">
+
+        <label for="prioridade" class="sr-only">Prioridade</label>
+        <select id="prioridade" name="prioridade">
+          <option value="baixa">🟢 Baixa</option>
+          <option value="media" selected>🟡 Média</option>
+          <option value="alta">🔴 Alta</option>
+        </select>
+      </div>
+
+      <label for="descricao" class="sr-only">Descrição</label>
+      <textarea id="descricao" name="descricao" placeholder="Descrição (opcional)" rows="2"></textarea>
+
+      <button type="submit" id="btnAdicionar">+ Adicionar Tarefa</button>
+    </form>
+
+    <!-- Filtros -->
+    <nav class="filters" aria-label="Filtrar tarefas">
+      <button data-filter="todas" class="active">Todas</button>
+      <button data-filter="pendentes">Pendentes</button>
+      <button data-filter="concluidas">Concluídas</button>
+    </nav>
+
+    <!-- Listas -->
+    <section id="listas">
+      <div id="listaPendentes" class="lista">
+        <h2>Pendentes</h2>
+        <ul aria-label="Lista de tarefas pendentes"></ul>
+      </div>
+      <div id="listaConcluidas" class="lista">
+        <h2>Concluídas</h2>
+        <ul aria-label="Lista de tarefas concluídas"></ul>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="src/js/app.js"></script>
+</body>
+
+</html>
